@@ -10,14 +10,38 @@
 <body class="container">
     <h1>CAT GALLERY</h1>
     <div class="imgContainer">
-        <img src="./assets/close-up-portrait-beautiful-cat.jpg" alt="photo a cat in glasses">   
+        <img src="./assets/close-up-portrait-beautiful-cat.jpg" alt="photo of funny cat" id="galleryImage">   
     </div>
     <div class="buttonContainer">
-        <button>Previous</button>
-        <button>Next</button>
+        <button id="prevButton" onclick="changeImage">Previous</button>
+        <button id="nextButton" onclick="changeImage">Next</button>
     </div>
 
 <script>
+function showMessage(){
+    console.log('Я учу Javascript!')
+}
+
+showMessage();
+
+const image1 ="./assets/close-up-portrait-beautiful-cat.jpg";
+const image2 = "./assets/selective-focus-black-white-adorable-cat-with-its-tongue-out.jpg";
+
+const galleryImage = document.getElementById('galleryImage');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+
+function changeImage (image){
+    galleryImage.src = image;
+}
+
+nextButton.addEventListener("click", () => {
+    changeImage(image2);
+})
+
+prevButton.addEventListener("click", () => {
+    changeImage(image1);
+})
 
 </script>
 </body>
